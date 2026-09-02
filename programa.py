@@ -36,7 +36,12 @@ CONSULTANDO FUNCIONÁRIO
             print("Edite os campos:")
             print(23 * '-')
             cpf = input("CPF.....: ")
-            editar_funci(funcionarios, cpf)
+            if not verif_funci(funcionarios, cpf):
+                print(23 * '-')
+                print("Funcionário inexistente!")
+                print(23 * '-')
+            else:
+                editar_funci(funcionarios, cpf)
         case '4':
             os.system("cls")
             if verif_dicionario_vazio(funcionarios):
@@ -57,17 +62,17 @@ EXCLUINDO FUNCIONÁRIO
 FUNCIONÁRIO INEXISTENTE!
 ------------------------
 """)
- 
-            resp = input("Confirme a exclusão do funcionário [S/N]?")
-            if resp.upper() == 'S':
-                excluir_funci(funcionarios, cpf)
-                print("""
----------------------
-FUNCIONÁRIO EXCLUÍDO!
----------------------
-""")
             else:
-                print("Exclusão cancelada...")
+                resp = input("Confirme a exclusão do funcionário [S/N]?")
+                if resp.upper() == 'S':
+                    excluir_funci(funcionarios, cpf)
+                    print("""
+                    ---------------------
+                    FUNCIONÁRIO EXCLUÍDO!
+                    ---------------------
+                    """)
+                else:
+                    print("Exclusão cancelada...")
 
         case '5':
             funci = input("CPF.....: ")
