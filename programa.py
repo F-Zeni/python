@@ -75,8 +75,12 @@ FUNCIONÁRIO INEXISTENTE!
                     print("Exclusão cancelada...")
 
         case '5':
-            funci = input("CPF.....: ")
-            listar_funci(funcionarios, funci)
+            if not verif_dicionario_vazio(funcionarios):
+                listar_funci(funcionarios)
+            else:
+                print(32 * "-")
+                print("A LISTA DE FUNCIONÁRIO ESTÁ VAZIA!")
+                print(32 * "-")
         case _:
             print("Informe uma opção válida!")
 

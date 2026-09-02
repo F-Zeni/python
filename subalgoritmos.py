@@ -65,7 +65,7 @@ def editar_funci(d: dict, funci: str) -> None:
 def excluir_funci(d: dict, funci: str) -> None:
     d.pop(funci)
 
-def listar_funci(d: dict, funci: str) -> None:
+def listar_funci(d: dict) -> None:
 
     print(f"{'CPF': <14} {'NOME':<21} {'SALARIO'}")
     print(52 * "=")
